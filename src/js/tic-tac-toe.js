@@ -3,7 +3,7 @@
 function ticTacToe() {    
     this.moves = [];     
     this.player = 'X';
-    this.computer = '0';
+    this.computer = 'O';
     this.initEvents();
 }
 
@@ -12,7 +12,8 @@ ticTacToe.prototype.displayMove = function (position, player) {
     document.getElementById(position).innerHTML = player;
 };
 
-ticTacToe.prototype.initEvents = function (buttons) {    
+ticTacToe.prototype.initEvents = function () {
+    document.getElementById("btn-start").addEventListener("click", this.resetBoard.bind(this));
     document.getElementById("pos-1").addEventListener("click", this.displayMove.bind(this, "pos-1", this.player));
     document.getElementById("pos-2").addEventListener("click", this.displayMove.bind(this, "pos-2", this.player));
     document.getElementById("pos-3").addEventListener("click", this.displayMove.bind(this, "pos-3", this.player));
@@ -24,5 +25,13 @@ ticTacToe.prototype.initEvents = function (buttons) {
     document.getElementById("pos-9").addEventListener("click", this.displayMove.bind(this, "pos-9", this.player));
 };
 
-var game = new ticTacToe();
+ticTacToe.prototype.resetBoard = function () {
+    console.log('reset board');
+        var space = "&nbsp;";
+        var elements = document.getElementsByClassName("square");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].innerHTML = space;
+        }
+};
 
+var game = new ticTacToe();
