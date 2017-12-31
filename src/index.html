@@ -8,7 +8,7 @@
     <!-- build:css css/style.min.css -->
     <link href="css/style.css" rel="stylesheet">
     <!-- /build -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -28,13 +28,18 @@
             <div class="square" id="pos-7">&nbsp;</div>
             <div class="square" id="pos-8">&nbsp;</div>
             <div class="square" id="pos-9">&nbsp;</div>
-        </div>        
-    
-    <div class="row">
-        <form>            
-            <button type="button" id="btn-start">START</button>
-        </form>
-    </div>
+        </div>
+
+        <div class="row">
+            <form>
+                <div class="row">
+                    <p>Player
+                        <input type="radio" value="1" name="player-X" id="player-X" checked><label for="player-X">X</label>
+                        <input type="radio" value="2" name="player-0" id="player-0"><label for="player-0">0</label></p><br>
+                </div>
+                <button type="button" id="btn-start">START</button>
+            </form>
+        </div>
     </div>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> -->
     <!-- build:js js/tic-tac-toe.min.js -->
